@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import "./globals.css";
 
 // Shared metadata used by Next.js for the document title and description.
@@ -15,7 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <AppRouterCacheProvider options={{ enableCssLayer: true }}>
+          {children}
+        </AppRouterCacheProvider>
+      </body>
     </html>
   );
 }
