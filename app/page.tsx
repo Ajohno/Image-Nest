@@ -1,20 +1,28 @@
 import Navbar from "@/components/Navbar";
+import Breadcrumb from "@/components/Breadcrumb";
 import Link from "next/link";
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Grid from "@mui/material/Grid";
+import { Typography } from "@mui/material";
 
 export default function Home() {
   return (
     <>
       <Navbar />
 
+      
+
       <main className="grid min-h-[calc(100vh-73px)] place-items-center px-5 py-12">
+        
+        <div className="justify-self-start">
+          <Breadcrumb/>
+        </div>
         <section
-          className="w-full max-w-[760px] rounded-lg border border-border-soft bg-panel p-7 shadow-[0_24px_70px_rgb(22_21_20_/_0.08)] sm:p-10 lg:p-14"
+          className="w-full rounded-lg border border-border-soft bg-panel p-7 shadow-[0_24px_70px_rgb(22_21_20_/_0.08)] sm:p-10 lg:p-14"
           aria-labelledby="page-title"
         >
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.12em] text-accent">
-            Image Nest
-          </p>
-
+          
           <h1
             id="page-title"
             className="m-0 max-w-[12ch] text-5xl leading-[0.92] sm:text-7xl lg:text-8xl"
@@ -42,6 +50,20 @@ export default function Home() {
               Upload image
             </Link>
           </div>
+
+          {/* Album Grid */}
+          <Grid container spacing={2} style={{ marginTop: '20px' }}>
+            <Card variant="outlined">
+              <CardContent>
+                <Typography variant="h5" component="div">
+                  Album 1
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Description of Album 1.
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
         </section>
       </main>
     </>
